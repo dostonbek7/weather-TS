@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="shortcut icon"
+      href="./images/sun-cloud.jpg"
+      type="image/x-icon"
+    />
+    <style type="text/tailwindcss">
+      @layer components {
+        html,
+        body {
+          @apply h-full flex flex-col;
+        }
+        body {
+          @apply max-w-2xl mx-auto w-full px-20 outline-none;
+        }
+        .input {
+          @apply border-[1px] border-solid border-[#222] px-4 py-3 rounded-lg focus:outline-none focus:border-sky-500;
+        }
+        .max-container {
+          @apply;
+        }
+        .open {
+          @apply flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mt-14 px-7 py-5 shadow-lg rounded-lg w-[500px]">
+      <div class="mb-4">
+        <h1 class="text-2xl text-center mb-4 font-bold">Weather info</h1>
+        <form>
+          <label for="search" class="flex items-center gap-2 relative">
+            <input
+              type="text"
+              id="text"
+              class="input grow"
+              autocomplete="off"
+              placeholder="Enter location"
+            />
+            <svg
+              class="w-5 h-5 absolute right-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div
+      id="deatils"
+      class="flex flex-col items-center justify-center shadow-xl rounded-lg w-[500px] min-h-[400px]"
+    >
+      <div class="flex items-center gap-2 mb-5">
+        <h2 class="text-xl md:text-3xl font-semibold">
+          Shahringizni kiriting!
+        </h2>
+        <span id="country" class="text-xl md:text-3xl font-medium"></span>
+      </div>
+      <h3 class="text-2xl font-semibold mb-6"></h3>
+      <h2 id="temp" class="text-4xl md:text-[60px] mb-8">℃</h2>
+      <img class="object-cover w-[200px]" src="./images//Clouds.svg" alt="" />
+    </div>
+    <script type="module" src="./public/app.js"></script>
+  </body>
+</html>
